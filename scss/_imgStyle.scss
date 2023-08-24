@@ -1,0 +1,66 @@
+.bg {
+    background: url("../img/main_bg.png") no-repeat top left;
+    background-size: cover;
+}
+
+.middle {
+    background: url("../img/center_bg.png")no-repeat top left;
+    background-size: contain;
+}
+
+// 
+main .marquee {
+    background: url("../img/marquee_box.png")no-repeat;
+    background-size: contain;
+}
+
+main .marquee .title div>i {
+    background: url("../img/microphone.png")no-repeat;
+    background-size: contain;
+}
+
+main .gameType ul li .box {
+    background: url("../img/grid_bg.png")no-repeat;
+    background-size: contain;
+}
+
+// 
+footer .top .center .menu li::before {
+    background: url("../img/active_bg.png")no-repeat;
+    background-size: contain;
+}
+
+footer .bottom {
+    background: url("../img/footer_bg.png")no-repeat;
+    background-size: cover;
+    background-color: $main_4 ;
+}
+
+// 
+aside .download {
+    background: url("../img/aside_c.png")no-repeat;
+    background-size: contain;
+}
+
+aside .download>a>i {
+    background: url("../img/aside_d.png")no-repeat;
+    background-size: 100%;
+}
+
+aside .toTop {
+    background: url("../img/goTop_bg..png")no-repeat;
+    background-size: contain;
+}
+
+aside .toTop>i {
+    background: url("../img/goTop_ic.png")no-repeat;
+    background-size: contain;
+}
+aside .group {
+    background: url("../img/services.png")no-repeat;
+    background-size: contain;
+}
+aside .group > a i {
+    background: url("../img/ic_group.png")no-repeat;
+    background-size: 300%;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- vue3 js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="center">
+                <form action="">
+                    <label for="">
+                        <input type="text" placeholder="帳號">
+                    </label>
+                    <label for="">
+                        <input type="password" placeholder="密碼">
+                    </label>
+                    <button type="button" onclick="window.location.href='https://www.google.com.tw/?hl=zh-TW'">登入</button>
+                    <button type="button" onclick="window.location.href='https://www.google.com.tw/?hl=zh-TW'">註冊</button>
+                    <div class="forgetBtn">
+                        <i>?</i>
+                        <a href="https://www.google.com.tw/?hl=zh-TW">忘記密碼</a>
+                    </div>
+                    <label for="" class="language-select">
+                        <div>
+                            <span></span>
+                        </div>
+                        <select name="" id="">
+                            <option value="">繁體中文</option>
+                            <option value="">简体中文</option>
+                            <option value="">ENGLISH</option>
+                            <option value="">日本語</option>
+                        </select>
+                        <div>
+                            <span></span>
+                        </div>
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="center">
+                <div class="logo">
+                    <img src="./img/logo.png">
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li v-for="(li,index) in lis" :key="index" :class="{active: li.active}"
+                            @mouseover="active(index)">
+                            <a :href="li.url">{{ li.text }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="swiper-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./img/banner.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/banner.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/banner.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </section>
+        <div class="marquee">
+            <div class="title">
+                <div>
+                    <span></span>
+                    <i></i>
+                </div>
+            </div>
+            <div class="textBox">
+                <p>我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈</p>
+            </div>
+        </div>
+        <section class="gameType">
+            <ul>
+                <li v-for="game in games">
+                    <div :class="['box',game.class]">
+                        <img :src="game.imgSrc" alt="">
+                    </div>
+                    <p class="gameName">{{ game.name }}</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="top">
+            <div class="center">
+                <ul class="menu">
+                    <li v-for="(li,index) in lis" :key="index" :class="{active: li.active}" @mouseover="active(index)">
+                        <a :href="li.url">{{ li.text }}</a>
+                    </li>
+                </ul>
+                <p class="memo">2021 WAW GAME.COM</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="center">
+                <p>
+                    致力於成為世界頂級的在線娛樂公司。因此，在處理任何事情的時候，都會修先考慮客戶的利益。客戶的最大滿意就是我們的成功。
+                    <br>
+                    提供全天候24小時的在線客服，提供專業化和人性化相結合的最佳服務。
+                </p>
+            </div>
+        </div>
+    </footer>
+    <aside>
+        <div class="download">
+            <a href="https://www.google.com.tw/?hl=zh-TW">
+                <i></i>
+                <p>手機下載</p>
+            </a>
+        </div>
+        <div class="toTop" @click="scrollToTop" v-if="showToTop">
+            <i></i>
+        </div>
+        <div class="group">
+            <a :href="a.url" v-for="(a,index) in as" :key="index" :class="a.class">
+                <i></i>
+                <p>{{ a.name }}</p>
+            </a>
+        </div>
+    </aside>
+    <div class="bg"></div>
+    <div class="middle"></div>
+</body>
+<!-- js -->
+<script src="./js/javaScript.js"></script>
+
+</html>

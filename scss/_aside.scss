@@ -1,0 +1,218 @@
+aside {
+    width: auto;
+    height: auto;
+
+    .download {
+        width: 75px;
+        height: 167px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 200px;
+        left: 0;
+        z-index: 99;
+
+        >a {
+            width: 45px;
+            height: 110px;
+            background: $main_5;
+            border: solid 1px $border_3;
+            border-radius: 5px;
+            margin: 10px 5px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            >i {
+                width: 18px;
+                height: 22px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 16px;
+                color: $font_7;
+                writing-mode: vertical-lr;
+            }
+        }
+
+        &:hover,
+        &:active,
+        &.active {
+            a {
+                background: $linear_2;
+            }
+
+            i,
+            p {
+                animation: flash 1.3s linear 0s infinite;
+            }
+
+            @keyframes flash {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            i {
+                background-position-y: 100%;
+            }
+
+            p {
+                color: $font_2;
+            }
+        }
+    }
+
+    .toTop {
+        width: 72px;
+        height: 93px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 600px;
+        right: 0;
+        z-index: 99;
+        cursor: pointer;
+
+        >i {
+            width: 27px;
+            height: 31px;
+            margin: 8px 0 0 8px;
+        }
+
+        &:hover,
+        &:active,
+        &.active {
+            i {
+                animation: move 1.3s ease-in-out 0s infinite;
+            }
+
+            @keyframes move {
+                0% {
+                    transform: translateY(10%);
+                }
+
+                100% {
+                    transform: translateY(-7%);
+                }
+            }
+        }
+    }
+
+    .group {
+        width: 100px;
+        height: 169px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 200px;
+        right: 0;
+        z-index: 99;
+
+        >a {
+            width: 80px;
+            height: 35px;
+            background: $main_5;
+            border: solid 1px $border_3;
+            margin: 0 0 5px 0;
+            transform: translateY(7px) translateX(1px);
+            display: flex;
+            align-items: center;
+            padding: 0 1px;
+            overflow: hidden;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            p {
+                width: 50px;
+                font-size: 12px;
+                color: $font_7 ;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            i {
+                width: 25px;
+                height: 25px;
+            }
+
+            &.service {
+                i {
+                    background-position-x: 0;
+                }
+            }
+
+            &.line {
+                i {
+                    background-position-x: 50%;
+                    transform: translateX(1px);
+                }
+            }
+
+            &.weChat {
+                i {
+                    background-position-x: 100%;
+                    transform: translateX(2px);
+                }
+            }
+
+            &:hover,
+            &:active,
+            &.active {
+                background: $linear_2;
+
+                p {
+                    animation: aside_active 0.6s linear 0s infinite;
+                    color: $font_2;
+
+                    @keyframes aside_active {
+                        0% {
+                            transform: translateX(0);
+                        }
+
+                        40% {
+                            transform: translateX(5%);
+                        }
+
+                        70% {
+                            transform: translateX(-5%);
+                        }
+
+                        100% {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+
+                >i {
+                    background-position-y: 100%;
+                    animation: i_move 1s linear 0s infinite;
+
+                    @keyframes i_move {
+                        0% {
+                            opacity: 0;
+                        }
+
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

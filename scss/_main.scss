@@ -1,0 +1,542 @@
+main {
+    width: 100%;
+    height: auto;
+    padding: 120px 0 0 0;
+
+    .swiper-banner {
+        @include swiper_1;
+    }
+
+    .marquee {
+        @include marquee_1;
+    }
+
+    .gameType {
+        width: 1400px;
+        height: auto;
+        margin: 0 auto;
+        padding: 0 70px;
+
+        ul {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 260px);
+            justify-content: space-between;
+            gap: 55px 0;
+
+            li {
+                width: auto;
+                height: auto;
+
+                .box {
+                    width: 247px;
+                    height: 267px;
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    img {
+                        width: 225px;
+                        height: 225px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    &.live_1 {
+                        >img {
+                            top: 15px;
+                            left: 10px;
+                        }
+                    }
+
+                    &.live_2 {
+                        >img {
+                            top: 15px;
+                            left: 8px;
+                        }
+                    }
+
+                    &.slot_1 {
+                        >img {
+                            top: 20px;
+                            left: 9px;
+                        }
+                    }
+
+                    &.slot_2 {
+                        >img {
+                            top: 20px;
+                            left: 14px;
+                        }
+                    }
+
+                    &.board_1 {
+                        >img {
+                            top: 13px;
+                            left: 14px;
+                        }
+                    }
+
+                    &.lottery_1 {
+                        >img {
+                            top: 23px;
+                            left: 21px;
+                        }
+                    }
+
+                    &.sport_1 {
+                        >img {
+                            top: 22px;
+                            left: 8px;
+                        }
+                    }
+
+                    &.fish_1 {
+                        >img {
+                            top: 27px;
+                            left: 9px;
+                        }
+                    }
+                }
+
+                .gameName {
+                    width: 222px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include text_1;
+                    position: relative;
+                    margin: 20px 0 0 15px;
+                    cursor: pointer;
+
+                    @keyframes active_p {
+
+                        0%,
+                        100% {
+                            transform: rotate(0deg);
+                            transform-origin: 50% 100%;
+                        }
+
+                        10% {
+                            transform: rotate(2deg);
+                        }
+
+                        20%,
+                        40%,
+                        60% {
+                            transform: rotate(-4deg);
+                        }
+
+                        30%,
+                        50%,
+                        70% {
+                            transform: rotate(4deg);
+                        }
+
+                        80% {
+                            transform: rotate(-2deg);
+                        }
+
+                        90% {
+                            transform: rotate(2deg);
+                        }
+                    }
+
+
+                    &:hover,&:active,&.active{
+                        animation: active_p 1s ease-in-out 0s infinite;
+                    }
+                }
+
+                .box {
+                    &:hover,
+                    &:active,
+                    &.active {
+                        @keyframes go_top {
+                            0% {
+                                opacity: 0;
+                                transform: translateY(80%) scale(0.5);
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+
+                        @keyframes go_top_2 {
+                            0% {
+                                opacity: 0;
+                                transform: translateY(100%) translateX(-100%);
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: translateY(0) translateX(0);
+                            }
+                        }
+
+                        @keyframes right_move {
+                            0% {
+                                opacity: 0;
+                                transform: translateX(80%) scale(0.5);
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: translateX(0);
+                            }
+                        }
+
+                        @keyframes right_move_2 {
+                            0% {
+                                opacity: 0;
+                                transform: translateX(80%) scale(0.5) translateY(50%);
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: translateX(0);
+                            }
+                        }
+
+                        @keyframes up_down {
+                            0% {
+                                transform: translateY(-500px);
+                                animation-timing-function: ease-in;
+                                opacity: 0;
+                            }
+
+                            38% {
+                                transform: translateY(0);
+                                animation-timing-function: ease-out;
+                                opacity: 1;
+                            }
+
+                            55% {
+                                transform: translateY(-65px);
+                                animation-timing-function: ease-in;
+                            }
+
+                            72% {
+                                transform: translateY(0);
+                                animation-timing-function: ease-out;
+                            }
+
+                            81% {
+                                transform: translateY(-28px);
+                                animation-timing-function: ease-in;
+                            }
+
+                            90% {
+                                transform: translateY(0);
+                                animation-timing-function: ease-out;
+                            }
+
+                            95% {
+                                transform: translateY(-8px);
+                                animation-timing-function: ease-in;
+                            }
+
+                            100% {
+                                transform: translateY(0);
+                                animation-timing-function: ease-out;
+                            }
+                        }
+
+                        @keyframes slide-in-bck-center {
+                            0% {
+                                transform: translateZ(600px);
+                                opacity: 0;
+                            }
+
+                            100% {
+                                transform: translateZ(0);
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes scale-in-tl {
+                            0% {
+                                opacity: 0;
+                                transform: translateX(-100%);
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: translate(0);
+                            }
+                        }
+
+                        @keyframes roll-in-blurred-left {
+                            0% {
+                                transform: translateX(-100%) rotate(-720deg);
+                                filter: blur(50px);
+                                opacity: 0;
+                            }
+
+                            100% {
+                                transform: translateX(0) rotate(0deg);
+                                filter: blur(0);
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes live_1_hover {
+                            0% {
+                                transform: skew(3deg) translateY(0);
+                            }
+
+                            25% {
+                                transform: skew(0) translateY(3%);
+                            }
+
+                            75% {
+                                transform: skew(-3deg) translateY(0);
+                            }
+
+                            100% {
+                                transform: skew(0deg) translateY(0);
+                            }
+                        }
+
+                        @keyframes live_2_hover {
+                            0% {
+                                transform: translate(0);
+                            }
+
+                            30% {
+                                opacity: 0;
+                            }
+
+                            50% {
+                                opacity: 1;
+                                transform: scaleX(-1);
+                            }
+
+                            70% {
+                                opacity: 0;
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: scaleX(1);
+                            }
+                        }
+
+                        @keyframes slot_1_hover {
+                            0% {
+                                opacity: 0;
+                            }
+
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes slot_2_hover {
+                            0% {
+                                transform: scale(1);
+                            }
+
+                            50% {
+                                transform: scale(1.1);
+                            }
+
+                            100% {
+                                transform: scale(1);
+                            }
+                        }
+
+                        @keyframes board_1_hover {
+                            0% {
+                                transform: translateX(0%);
+                                transform-origin: 50% 50%;
+                            }
+
+                            15% {
+                                transform: translateX(-30px) rotate(6deg);
+                            }
+
+                            30% {
+                                transform: translateX(15px) rotate(-6deg);
+                            }
+
+                            45% {
+                                transform: translateX(-15px) rotate(3.6deg);
+                            }
+
+                            60% {
+                                transform: translateX(9px) rotate(-2.4deg);
+                            }
+
+                            75% {
+                                transform: translateX(-6px) rotate(1.2deg);
+                            }
+
+                            100% {
+                                transform: translateX(0%);
+                                transform-origin: 50% 50%;
+                            }
+                        }
+
+                        @keyframes lottery_1_hover {
+                            0% {
+                                transform: scale3d(1, 1, 1);
+                            }
+
+                            30% {
+                                transform: scale3d(1.25, 0.75, 1);
+                            }
+
+                            40% {
+                                transform: scale3d(0.75, 1.25, 1);
+                            }
+
+                            50% {
+                                transform: scale3d(1.15, 0.85, 1);
+                            }
+
+                            65% {
+                                transform: scale3d(0.95, 1.05, 1);
+                            }
+
+                            75% {
+                                transform: scale3d(1.05, 0.95, 1);
+                            }
+
+                            100% {
+                                transform: scale3d(1, 1, 1);
+                            }
+                        }
+
+                        @keyframes sport_1_hover {
+                            0% {
+                                transform: translateX(-48px);
+                                opacity: 1;
+                            }
+
+                            24% {
+                                opacity: 1;
+                            }
+
+                            40% {
+                                transform: translateX(-26px);
+                            }
+
+                            65% {
+                                transform: translateX(-13px);
+                            }
+
+                            82% {
+                                transform: translateX(-6.5px);
+                            }
+
+                            93% {
+                                transform: translateX(-4px);
+                            }
+
+                            25%,
+                            55%,
+                            75%,
+                            87%,
+                            98% {
+                                transform: translateX(0px);
+                            }
+
+                            100% {
+                                transform: translateX(0px);
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes fish_1_hover {
+
+                            0%,
+                            100% {
+                                transform: rotate(0deg);
+                                transform-origin: 50% 100%;
+                            }
+
+                            10% {
+                                transform: rotate(2deg);
+                            }
+
+                            20%,
+                            40%,
+                            60% {
+                                transform: rotate(-4deg);
+                            }
+
+                            30%,
+                            50%,
+                            70% {
+                                transform: rotate(4deg);
+                            }
+
+                            80% {
+                                transform: rotate(-2deg);
+                            }
+
+                            90% {
+                                transform: rotate(2deg);
+                            }
+                        }
+
+                        &.live_1 {
+                            >img {
+                                animation: go_top_2 0.5s ease-in-out 0s, live_1_hover 2s ease-in-out 3s infinite;
+                            }
+                        }
+
+                        &.live_2 {
+                            >img {
+                                animation: go_top 0.5s ease-in-out, live_2_hover 3s ease-in-out 3s infinite;
+                            }
+                        }
+
+                        &.slot_1 {
+                            >img {
+                                animation: right_move_2 0.8s ease-in-out 0s, slot_1_hover 2s linear 3s infinite;
+                            }
+                        }
+
+                        &.slot_2 {
+                            >img {
+                                animation: right_move 0.8s ease-in-out 0s, slot_2_hover 1s linear 3s infinite;
+                            }
+                        }
+
+                        &.board_1 {
+                            >img {
+                                animation: up_down 1.1s ease-in-out 0s, board_1_hover 1s linear 3s infinite;
+                            }
+                        }
+
+                        &.lottery_1 {
+                            >img {
+                                animation: slide-in-bck-center 0.7s ease-in-out, lottery_1_hover 1s ease-in-out 3s infinite;
+                            }
+                        }
+
+                        &.sport_1 {
+                            >img {
+                                animation: scale-in-tl 0.5s ease-in-out, sport_1_hover 1s ease-in-out 3s infinite;
+                            }
+                        }
+
+                        &.fish_1 {
+                            >img {
+                                animation: roll-in-blurred-left 0.65s ease-in-out both, fish_1_hover 0.8s ease-in-out 3s infinite;
+                                ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
